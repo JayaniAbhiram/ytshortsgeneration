@@ -7,8 +7,8 @@
   ],
   "functions": {
     "api/app.py": {
-      "maxDuration": 300, // Hobby tier max is 300 seconds (5 minutes)
-      "memory": 1024 // 1GB memory. Adjust if needed, Max 2GB on Hobby.
+      "maxDuration": 300, 
+      "memory": 1024 
     }
   }
 }
