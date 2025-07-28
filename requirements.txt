@@ -4,5 +4,6 @@ Pillow==9.5.0
 requests
 gunicorn
 vercel-blob==0.4.2
+yt-dlp
 
 
