@@ -54,13 +54,15 @@ def download_youtube_video_to_temp(youtube_url, temp_dir):
     output_filename_template = f"full_video_{timestamp}.%(ext)s"
     output_path_template = os.path.join(temp_dir, output_filename_template)
 
-    cmd = [
-        "yt-dlp",
-        "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
-        "-o", output_path_template,
-        "--no-part",
-        youtube_url
-    ]
+    # Use sys.executable to run yt-dlp as a module, which is more robust in serverless envs.
+cmd = [
+    sys.executable,  # This gets the path to the current Python interpreter (e.g., /usr/local/bin/python)
+    "-m", "yt_dlp",  # This tells Python to run the 'yt_dlp' module as a script
+    "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
+    "-o", output_template,
+    "--no-part",
+    youtube_url
+]
 
     log_message(f"\n--- Downloading YouTube video from: {youtube_url} ---")
     log_message(f"Saving temporarily to: {temp_dir}")
