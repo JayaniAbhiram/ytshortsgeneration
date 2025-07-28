@@ -9,8 +9,7 @@ import tempfile # For temporary local file storage
 from moviepy.editor import VideoFileClip, CompositeVideoClip, ColorClip
 from flask import Flask, render_template, request, jsonify, url_for, send_from_directory
 
-# Vercel Blob SDK import
-from vercel_blob import put, list_blobs, del_blobs # Will need to configure BLOB_READ_WRITE_TOKEN on Vercel
+from vercel_blob import put # Only 'put' is available in current public SDK versions
 
 app = Flask(__name__)
 
