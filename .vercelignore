@@ -1,0 +1,10 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore downloaded and generated video folders from local development
+downloaded_youtube_videos/
+youtube_short_clips/
+
+# Git-related
+.git/
+.gitignore
